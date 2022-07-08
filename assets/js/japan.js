@@ -14,3 +14,6 @@ window.initMap = initMap;
 goBack.addEventListener("click", function () {
 	window.location.replace("./index.html");
 });
+
+
+
