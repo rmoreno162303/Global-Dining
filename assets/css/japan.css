@@ -2,10 +2,8 @@
     margin: 1%;
   }
 
-/* resets */
 body { margin:0px; padding:0px; }
 
-/* main */
 header {
     height: 320px;
     z-index: 10;

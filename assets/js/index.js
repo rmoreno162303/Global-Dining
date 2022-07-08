@@ -9,9 +9,9 @@ const markers = [{
     long: -70
   },
   {
-    name: 'NYC',
-    lat: 40,
-    long: -70
+    name: 'Mexico',
+    lat: 23,
+    long: -102
   },
   {
     name: 'France',
