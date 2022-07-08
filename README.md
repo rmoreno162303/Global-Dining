@@ -1,4 +1,4 @@
-#Project-
+# Project
 This project was designed as a project assignment for University of Texas at Austin bootcamp.
 
 This is a project who's goal is to show a user a comparison between airBnB and hotel prices to show the user which might be better.
