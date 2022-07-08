@@ -36,20 +36,13 @@ To install this code, download the zip file, or use GitHub's guidelines to clone
 -
 -
 
-### This project has media Queries for:
--
--
--
-
 ### To Execute File:
--
--
--
+Open in browser
 
 ### Features:
--
--
--
+- Index.html and multiple country.html's
+- Style.css and multiple country.css's
+- index.js and multiple country.js's
 
 ### Authors
 - Austin Murray
