@@ -59,4 +59,4 @@ To install this code, download the zip file, or use GitHub's guidelines to clone
 - Troy Ekdahl
 
 ### Acknowledgments
-Hat tip to UNH for providing project parameters and code examples
+
