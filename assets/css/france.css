@@ -1,9 +1,9 @@
 .columns {
-    margin: 1%;
-    border-style: solid;
-    border-color: #ADA996;
-    border-width: 0.5px;
-  }
+  margin: 1%;
+  border-style: solid;
+  border-color: #ADA996;
+  border-width: 0.5px;
+}
 
 /* resets */
 body { margin:0px; padding:0px; }
