@@ -9,9 +9,9 @@ const markers = [{
   long: -70
 },
 {
-  name: 'NYC',
-  lat: 40,
-  long: -70
+  name: 'Mexico',
+  lat: 23,
+  long: -102
 },
 {
   name: 'France',
@@ -33,10 +33,11 @@ const $ = {
     delta: 0,
     last: 0
   },
-  {
-    name: 'Mexico',
-    lat: 23,
-    long: -102
+  drag: {
+    start: { x: 0, y: 0 },
+    force: 0,
+    prevX: 0,
+    isDragging: false
   },
   colors: {
     pushPinBase: '#969799',
