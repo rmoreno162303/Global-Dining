@@ -33,11 +33,10 @@ const $ = {
     delta: 0,
     last: 0
   },
-  drag: {
-    start: { x: 0, y: 0 },
-    force: 0,
-    prevX: 0,
-    isDragging: false
+  {
+    name: 'Mexico',
+    lat: 23,
+    long: -102
   },
   colors: {
     pushPinBase: '#969799',

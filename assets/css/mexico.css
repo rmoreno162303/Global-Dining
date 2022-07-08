@@ -1,9 +1,9 @@
 .columns {
-  margin: 1%;
-  border-style: solid;
-  border-color: #ADA996;
-  border-width: 0.5px;
-}
+    margin: 1%;
+    border-style: solid;
+    border-color: #ADA996;
+    border-width: 0.5px;
+  }
 
 /* resets */
 body { margin:0px; padding:0px; }
@@ -15,7 +15,7 @@ header {
 }
 .header-banner {
     background-color: #333;
-    background-image: url('https://www.state.gov/wp-content/uploads/2018/11/France-1980x1406.jpg');
+    background-image: url('https://i.natgeofe.com/n/6c02ad5a-977b-4f12-b9c0-02ffb0736e07/metropolitan-cathedral-zocalo-mexico-city_2x1.JPG');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
