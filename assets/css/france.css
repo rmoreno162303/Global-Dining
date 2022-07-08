@@ -10,17 +10,17 @@ body { margin:0px; padding:0px; }
 
 /* main */
 header {
-  height: 320px;
-  z-index: 10;
+    height: 320px;
+    z-index: 10;
 }
 .header-banner {
-  background-color: #333;
-  background-image: url('https://www.state.gov/wp-content/uploads/2019/04/Japan-2107x1406.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 300px;
+    background-color: #333;
+    background-image: url('https://www.state.gov/wp-content/uploads/2018/11/France-1980x1406.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
 }
 
 header h1 {
@@ -41,23 +41,12 @@ header button {
   color: #fff;
   padding: 0 1rem;
   position: absolute;
-  top: 2rem; 
-  left: 2rem;
-  font-size: 3rem;
+  top: 15rem;
+  right: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
-}
-
-header button {
-background-color:rgba(54, 54, 54, 0.8);
-color: #fff;
-padding: 0 1rem;
-position: absolute;
-top: 15rem;
-right: 2rem;
-font-size: 1.5rem;
-font-weight: bold;
-border: none;
-cursor: pointer;
+  border: none;
+  cursor: pointer;
 }
 
 #map {

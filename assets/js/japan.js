@@ -15,10 +15,4 @@ goBack.addEventListener("click", function () {
 	window.location.replace("./index.html");
 });
 
-// import { _MY_API_KEY } from './config.js';
-
-// fetch('https://hotels4.p.rapidapi.com/locations/v2/search?query=Japan&locale=en_US&currency=USD', options)
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-// 	.catch(err => console.error(err));
 
