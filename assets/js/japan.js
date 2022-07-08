@@ -21,3 +21,4 @@ fetch('https://hotels4.p.rapidapi.com/locations/v2/search?query=Japan&locale=en_
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
+
