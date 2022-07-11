@@ -1,3 +1,7 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
 .columns {
     margin: 1%;
     border-style: solid;
@@ -15,7 +19,7 @@ header {
 }
 .header-banner {
     background-color: #333;
-    background-image: url('https://i.natgeofe.com/n/6c02ad5a-977b-4f12-b9c0-02ffb0736e07/metropolitan-cathedral-zocalo-mexico-city_2x1.JPG');
+    background-image: url('https://cdn.britannica.com/12/101712-050-5883BF3F/cathedral-Guadalajara-Mex.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

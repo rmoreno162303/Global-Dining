@@ -1,3 +1,7 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
 .columns {
   margin: 1%;
   border-style: solid;
@@ -13,7 +17,7 @@ header {
 }
 .header-banner {
   background-color: #333;
-  background-image: url('https://www.state.gov/wp-content/uploads/2019/04/Japan-2107x1406.jpg');
+  background-image: url('https://theplanetd.com/images/Best-Things-to-do-in-Tokyo-Japan-1.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

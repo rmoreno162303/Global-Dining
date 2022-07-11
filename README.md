@@ -1,7 +1,7 @@
 # Project #1
 This project was designed as a project assignment for University of Texas at Austin bootcamp.
 
-This is a project who's goal is to show a user a comparison between airBnB and hotel prices to show the user which might be better.
+This is a project who's goal is to show a user a comparison between airBnB and hotel prices to show the user which might be better for the users price range. This application is designed to
 
 This project has been deployed to GitHub Pages. To get this project up and running, you can follow the deployment link. Or, download the sources files to use this as a template.
 
