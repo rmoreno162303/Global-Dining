@@ -50,7 +50,7 @@ const markers = [{
       // put complex shapes here
     }
   }
-}
+
 
 const lerp = (norm, min, max) => {
   return (max - min) * norm + min;
