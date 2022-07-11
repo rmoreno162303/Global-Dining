@@ -1,4 +1,6 @@
 var goBack = document.querySelector("#goBack");
+var travelResultTextEl = document.querySelector("#travelResultText");
+var travelResultContentEl = document.querySelector("#travelResultContent");
 
 let map;
 
@@ -18,12 +20,28 @@ goBack.addEventListener("click", function () {
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'a0eee688dcmshf0cd55b72775dafp1f835ajsn7ed18ac2d93b',
-		'X-RapidAPI-Host': 'hotels4.p.rapidapi.com'
+		'X-RapidAPI-Key': '17dd0426edmsh13121a26fbfbab2p198620jsnb665b009c96d',
+		'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
 	}
 };
 
-fetch('https://hotels4.p.rapidapi.com/locations/v2/search?query=tokyo&locale=en_US&currency=', options)
+
+
+fetch('https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=36&longitude=138&limit=10&distance=2&open_now=false&lunit=km&lang=en_US', options)
 	.then(response => response.json())
-	.then(response => console.log(response))
+	.then(response => getParams(response.data))
 	.catch(err => console.error(err));
+
+
+
+
+
+function getParams(searchParamsArr) {
+  // var searchParamsArr = document.location.search.split('&');
+  console.log(searchParamsArr);
+  var name = searchParamsArr[0].name
+  var webUrl = searchParamsArr[0].web_url
+  console.log(name);
+  console.log(webUrl);
+    
+  }
