@@ -1,56 +1,55 @@
 const markers = [{
-    name: 'Tokyo',
-    lat: 35,
-    long: 138
-  },
-  {
-    name: 'Lima',
-    lat: -12.04,
-    long: -72.04
-  },
-  {
-    name: 'Guadalajara',
-    lat: 20.65,
-    long: -103.34
-  },
-  {
-    name: 'Paris',
-    lat: 46,
-    long: 3
-  }];
-  
-  const $ = {
-    canvas: null,
-    ctx: null,
-    vCenter: 820,
-    scroll: {
-      lat: 0,
-      long: 20
-    },
-    markers: [],
-    timing: {
-      speed: 2,
-      delta: 0,
-      last: 0
-    },
-    drag: {
-      start: { x: 0, y: 0 },
-      force: 0,
-      prevX: 0,
-      isDragging: false
-    },
-    colors: {
-      pushPinBase: '#969799',
-      pushPin: '#ed5c50',
-      land: '#fac648', //'#ffc975',
-      landShade: '#2c606e',
-      ocean: '#2A7B96'
-    },
-    complexShapes: {
-      // put complex shapes here
-    }
-  }
+  name: 'Tokyo',
+  lat: 35,
+  long: 138
+},
+{
+  name: 'Lima',
+  lat: -12.04,
+  long: -72.04
+},
+{
+  name: 'Guadalajara',
+  lat: 20.65,
+  long: -103.34
+},
+{
+  name: 'Paris',
+  lat: 46,
+  long: 3
+}];
 
+const $ = {
+  canvas: null,
+  ctx: null,
+  vCenter: 820,
+  scroll: {
+    lat: 0,
+    long: 20
+  },
+  markers: [],
+  timing: {
+    speed: 2,
+    delta: 0,
+    last: 0
+  },
+  drag: {
+    start: { x: 0, y: 0 },
+    force: 0,
+    prevX: 0,
+    isDragging: false
+  },
+  colors: {
+    pushPinBase: '#969799',
+    pushPin: '#ed5c50',
+    land: '#fac648', //'#ffc975',
+    landShade: '#2c606e',
+    ocean: '#2A7B96'
+  },
+  complexShapes: {
+    // put complex shapes here
+  }
+}
 
 const lerp = (norm, min, max) => {
   return (max - min) * norm + min;
@@ -338,35 +337,208 @@ const complexify = (landmass, level) => {
     }
   }
   
-  const drawMarkerText = (ctx, text, pos) => {
-      ctx.font = "60px 'Roboto'";
-      ctx.fillStyle = 'black';
-    
-      let metrics = ctx.measureText(text); 
-    
-      ctx.fillText(text, pos.x - (metrics.width / 2), pos.y - 30);
-  }
+  let last = landmass.pop();
+  last.edge = true;
+  complex.push(last);
+
+  return complex;
+}
+
+const distanceBetween = (p1, p2) => {
+  let a = p1.long - p2.long,
+      b = p1.lat - p2.lat;
+
+  return Math.hypot(a, b);
+}
+
+const continents = {
+  africa: [
+    { lat: 35.7, long: -5.8 },
+    { lat: 37.1, long: 10.9 },
+    { lat: 30, long: 32.2 },
+    { lat: 10.6, long: 44 },
+    { lat: 11.8, long: 51 },
+    { lat: -27.6, long: 30.5 },
+    { lat: -33.8, long: 18.6 },
+    { lat: 4.7, long: 9.2 },
+    { lat: 4.9, long: -7.7 },
+    { lat: 14.6, long: -16.8 },
+    { lat: 35.7, long: -5.8 }
+  ],
+  australia: [
+    { lat: -22, long: 114 },
+    { lat: -19, long: 121 },
+    { lat: -12, long: 130 },
+    { lat: -12, long: 136 },
+    { lat: -24, long: 153 },
+    { lat: -37, long: 150 },
+    { lat: -37, long: 140 },
+    { lat: -30, long: 131 },
+    { lat: -34, long: 115 },
+    { lat: -22, long: 114 }
+  ],
+  southamerica: [
+    { lat: 12, long: -73 },
+    { lat: 10, long: -61 },
+    { lat: -6, long: -34 },
+    { lat: -43, long: -62 },
+    { lat: -54, long: -67 },
+    { lat: -51, long: -74 },
+    { lat: -18, long: -70 },
+    { lat: -8, long: -77 },
+    { lat: -5, long: -81 },
+    { lat: 12, long: -73 }
+  ],
+  northamerica: [
+    { lat: 10, long: -72 },
+    { lat: 7, long: -75 },
+    { lat: 19, long: -104 },
+    { lat: 36, long: -121 },
+    { lat: 59, long: -140 },
+    { lat: 54, long: -167 },
+    { lat: 70, long: -163 },
+    { lat: 68, long: -137 },
+    { lat: 65, long: -88 },
+    { lat: 57, long: -92 },
+    { lat: 54, long: -80 },
+    { lat: 62, long: -75 },
+    { lat: 50, long: -54 },
+    { lat: 31, long: -80 },
+    { lat: 25, long: -79 },
+    { lat: 26, long: -81 },
+    { lat: 29, long: -84 },
+    { lat: 28, long: -96 },
+    { lat: 19, long: -95 },
+    { lat: 20, long: -87 },
+    { lat: 14, long: -83 },
+    { lat: 10, long: -72 },
+  ],
+  greenland: [
+    { lat: 78, long: -68 },
+    { lat: 81, long: -18 },
+    { lat: 69, long: -25 },
+    { lat: 60, long: -42 },
+    { lat: 67, long: -52 },
+    { lat: 78, long: -68 }
+  ],
+  japan: [
+    { lat: 45, long: 141 },
+    { lat: 43, long: 146 },
+    { lat: 35, long: 140 },
+    { lat: 31, long: 131 },
+    { lat: 34, long: 129 },
+    { lat: 36, long: 136 },
+    { lat: 39, long: 140 },
+    { lat: 45, long: 141 }
+  ],
+  indonesia: [
+    { lat: 7, long: 117 },
+    { lat: 5, long: 119 },
+    { lat: 0, long: 118 },
+    { lat: -4, long: 115 },
+    { lat: -3, long: 111 },
+    { lat: 2, long: 108 },
+    { lat: 7, long: 117 }
+  ],
+  papua: [
+    { lat: -1, long: 132 },
+    { lat: -3, long: 142 },
+    { lat: -10, long: 146 },
+    { lat: -7, long: 140 },
+    { lat: -6, long: 134 },
+    { lat: -1, long: 132 }
+  ],
+  nz: [
+    { lat: -35, long: 174 },
+    { lat: -38, long: 178 },
+    { lat: -46, long: 169 },
+    { lat: -45, long: 165 },
+    { lat: -38, long: 175 },
+    { lat: -35, long: 174 }
+  ],
+  asia: [
+    { lat: 64, long: 37 },
+    { lat: 73, long: 80 },
+    { lat: 66, long: 98 },
+    { lat: 69, long: 175 },
+    { lat: 60, long: 163 },
+    { lat: 38, long: 118 },
+    { lat: 28, long: 119 },
+    { lat: 23, long: 108 },
+    { lat: 12, long: 109 },
+    { lat: 9, long: 102 },
+    { lat: 23, long: 88 },
+    { lat: 16, long: 82 },
+    { lat: 7, long: 79 },
+    { lat: 25, long: 68 },
+    { lat: 27, long: 62 },
+    { lat: 21, long: 58 },
+    { lat: 13, long: 44 },
+    { lat: 30, long: 33.5 },
+    { lat: 64, long: 37 }
+  ],
+  europe: [
+    { lat: 37, long: -9 },
+    { lat: 43, long: -9 },
+    { lat: 44, long: 0 },
+    { lat: 48, long: -4 },
+    { lat: 53, long: 5 },
+    { lat: 56, long: 8 },
+    { lat: 54, long: 11 },
+    { lat: 55, long: 21 },
+    { lat: 59, long: 30 },
+    { lat: 60, long: 23 },
+    { lat: 61, long: 22 },
+    { lat: 65, long: 26 },
+    { lat: 65, long: 22 },
+    { lat: 60, long: 17 },
+    { lat: 59, long: 19 },
+    { lat: 56, long: 16 },
+    { lat: 56, long: 13 },
+    { lat: 60, long: 11 },
+    { lat: 60, long: 5 },
+    { lat: 69, long: 15 },
+    { lat: 70, long: 28 },
+    { lat: 68, long: 48 },
+    { lat: 36, long: 38 },
+    { lat: 45, long: 16 },
+    { lat: 45, long: 12 },
+    { lat: 40, long: 18 },
+    { lat: 37, long: 15 },
+    { lat: 40, long: 14 },
+    { lat: 44, long: 8 },
+    { lat: 41, long: 1 },
+    { lat: 37, long: -2 },
+    { lat: 37, long: -8 },
+    { lat: 37, long: -9 }
+  ],
+  britain: [
+    { lat: 50, long: -5 },
+    { lat: 54, long: -3 },
+    { lat: 57, long: -6 },
+    { lat: 57, long: -2 },
+    { lat: 51, long: 1 },
+    { lat: 50, long: -5 }
+  ],
+  madagaskar: [
+    { lat: -13, long: 49 },
+    { lat: -17, long: 43 },
+    { lat: -24, long: 44 },
+    { lat: -25, long: 47 },
+    { lat: -13, long: 49 }
+  ]
+}
+
+const updateState = (delta) => {
+  $.drag.force *= 0.8;
   
   if($.timing.speed) {
     $.scroll.long += Math.round = ($.timing.speed / 100) * delta;
     
-    // Scale click to responsive canvas
-    clickPos.x *= 1800 / rect.width;
-    clickPos.y *= 1600 / rect.height;
-    
-    // Compare to existing markers
-    for (const marker of markers) {
-      let markerPos = latLongSphere(marker.lat + $.scroll.lat, marker.long + $.scroll.long, 630);
-      
-      // Make sure only frontside markers are clickable
-      if(markerPos.z < 0) {
-        continue;
-      }
-      
-      if(Math.abs(clickPos.x - markerPos.x) < offset && Math.abs(clickPos.y -markerPos.y) < offset) {
-        window.location.replace("./assets/html/" + marker.name + ".html");
-        break;
-      }
+    if($.scroll.long > 360) {
+      $.scroll.long = $.scroll.long % 360;
+    } else if ($.scroll.long < 0) {
+      $.scroll.long += 360;   
     }
   }
 }
@@ -469,7 +641,7 @@ const drawMarkers = (ctx, markers, drawFront) => {
 }
 
 const drawMarkerText = (ctx, text, pos) => {
-    ctx.font = "60px 'Pirata One', cursive";
+    ctx.font = "60px 'Roboto'";
     ctx.fillStyle = 'black';
   
     let metrics = ctx.measureText(text); 
@@ -515,7 +687,7 @@ const onClick = (event) => {
     }
     
     if(Math.abs(clickPos.x - markerPos.x) < offset && Math.abs(clickPos.y -markerPos.y) < offset) {
-      window.location.replace("./" + marker.name + ".html");
+      window.location.replace("./assets/html/" + marker.name + ".html");
       break;
     }
   }
