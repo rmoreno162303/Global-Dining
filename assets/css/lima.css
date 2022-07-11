@@ -1,9 +1,13 @@
-.columns {
-  margin: 1%;
-  border-style: solid;
-  border-color: #ADA996;
-  border-width: 0.5px;
+* {
+  font-family: 'Roboto', sans-serif;
 }
+
+.columns {
+    margin: 1%;
+    border-style: solid;
+    border-color: #ADA996;
+    border-width: 0.5px;
+  }
 
 /* resets */
 body { margin:0px; padding:0px; }
@@ -15,7 +19,7 @@ header {
 }
 .header-banner {
     background-color: #333;
-    background-image: url('https://www.state.gov/wp-content/uploads/2018/11/France-1980x1406.jpg');
+    background-image: url('https://cdn.britannica.com/26/95026-050-004DB8AB/view-cathedral-Lima-Peru.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

@@ -1,20 +1,20 @@
 const markers = [{
-    name: 'Japan',
+    name: 'Tokyo',
     lat: 35,
     long: 138
   },
   {
-    name: 'Peru',
-    lat: -13,
-    long: -70
+    name: 'Lima',
+    lat: -12.04,
+    long: -72.04
   },
   {
-    name: 'Mexico',
-    lat: 23,
-    long: -102
+    name: 'Guadalajara',
+    lat: 20.65,
+    long: -103.34
   },
   {
-    name: 'France',
+    name: 'Paris',
     lat: 46,
     long: 3
   }];
@@ -641,7 +641,7 @@ const markers = [{
   }
   
   const drawMarkerText = (ctx, text, pos) => {
-      ctx.font = "60px 'Pirata One', cursive";
+      ctx.font = "60px 'Roboto'";
       ctx.fillStyle = 'black';
     
       let metrics = ctx.measureText(text); 
@@ -687,7 +687,7 @@ const markers = [{
       }
       
       if(Math.abs(clickPos.x - markerPos.x) < offset && Math.abs(clickPos.y -markerPos.y) < offset) {
-        window.location.replace("./" + marker.name + ".html");
+        window.location.replace("./assets/html/" + marker.name + ".html");
         break;
       }
     }

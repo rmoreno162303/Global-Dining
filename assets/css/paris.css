@@ -1,9 +1,13 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
 .columns {
-    margin: 1%;
-    border-style: solid;
-    border-color: #ADA996;
-    border-width: 0.5px;
-  }
+  margin: 1%;
+  border-style: solid;
+  border-color: #ADA996;
+  border-width: 0.5px;
+}
 
 /* resets */
 body { margin:0px; padding:0px; }
@@ -15,7 +19,7 @@ header {
 }
 .header-banner {
     background-color: #333;
-    background-image: url('https://www.peru.travel/Contenido/AcercaDePeru/Imagen/en/6/0.0/Principal/Machu%20Picchu.jpg');
+    background-image: url('https://breathelife2030.org/wp-content/uploads/2019/02/paris-1836415_1920.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -67,8 +71,6 @@ form{
   justify-content: left;
   align-items: flex-start;
   float: left;
-  
-  
 }
 
 form input, form button{
