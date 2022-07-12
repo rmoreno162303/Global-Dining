@@ -25,6 +25,11 @@ header {
   height: 300px;
 }
 
+#goBack {
+  width:fit-content;
+}
+
+
 header h1 {
     background-color: rgba(54, 54, 54, 0.8);
     color: #fff;
@@ -67,6 +72,7 @@ cursor: pointer;
 #map {
 height: 40%;
 margin: 1%;
+
 }
 
 html,
