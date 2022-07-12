@@ -15,8 +15,45 @@ goBack.addEventListener("click", function () {
 	window.location.replace("../../index.html");
 });
 
+// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------API CODE--------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Code for restaurant api
+const optionsParis = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '17dd0426edmsh13121a26fbfbab2p198620jsnb665b009c96d',
+		'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
+	}
+};
+
+fetch('https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=48.85&longitude=2.35&limit=10&lang=en_US', optionsParis)
+	.then(response => response.json())
+	.then(response => getParams(response.data))
+	// .catch(err => console.error(err));
+
+
+
+function getParams(searchParamsArr) {
+  console.log(searchParamsArr);
+
+  for (var i = 0; i < searchParamsArr.length; i++) {
+
+    var nameTravel = searchParamsArr[i].name
+    var webUrl = searchParamsArr[i].web_url
+    console.log(nameTravel)
+    console.log(webUrl)
+
+    if (nameTravel !== undefined) {
+      var restaurants = document.querySelector('.restaurants');
+      restaurants.insertAdjacentHTML("beforebegin", `<a href=${webUrl}><li>${nameTravel}</li></a>`)
+    }
+  }
+}
+
+
  // Code for Currency API
-  
  (function onLoad()
  {
      // set a function for button
