@@ -47,11 +47,25 @@ function getParams(searchParamsArr) {
   }
 
   // Code for Currency API
-  async function getCurrencyExchangeRates()
+  
+  (function onLoad()
+{
+    // set a function for button
+    setButtonFunctions();
+
+    // fetch from API when the page loads
+    getCurrencyExchangeRates();
+})();
+
+function setButtonFunctions() {
+document.getElementById('buttonCurrency').onclick = getCurrencyExchangeRates;
+}
+
+function getCurrencyExchangeRates()
   {
   const from = document.getElementById('inputCurrencyFrom').value;
   const to = document.getElementById('inputCurrencyTo').value;
-  await fetch('https://currency-exchange.p.rapidapi.com/exchange?q=1.0&from=' + from + '&to=' + to, {
+   fetch('https://currency-exchange.p.rapidapi.com/exchange?q=1.0&from=' + from + '&to=' + to, {
     "method": 'GET',
     "headers": {
       'X-RapidAPI-Key': '398fb245d7msh383d7c9eee5f575p12e203jsn4fecb1f38eaa',
@@ -63,7 +77,12 @@ function getParams(searchParamsArr) {
     .then(response => {
       console.log('Currency Exchange API object:');
       console.log(response);
+      console.log("\n");
+
       document.getElementById('currencyResult').innerHTML = 'Result: ' + response;
     })
-    .catch(err => console.error(err));
-  }
+    .catch(err => {
+       console.error(err);
+  });
+}
+
