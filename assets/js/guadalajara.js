@@ -32,7 +32,7 @@ const options = {
 fetch('https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=20.65&longitude=-103.34&limit=10&currency=USD&open_now=false&lunit=km&lang=en_US', options)
 	.then(response => response.json())
 	.then(response => getParams(response.data))
-	// .catch(err => console.error(err));
+  .catch(err => console.error(err));
 
 function getParams(searchParamsArr) {
 	// var searchParamsArr = document.location.search.split('&');
