@@ -56,14 +56,13 @@ function getParams(searchParamsArr) {
     // for (var i = 0; i < data.length; i++) {
       // var createName = document.createElement
 
+      var restaurants = document.querySelector(".restaurants");
+      restaurants.insertAdjacentHTML("beforebegin" , `<a href=${webUrl}><li>${nameTravel}</li></a>` )
   
     }
   }
 
-  function printResultsTravel (resultObj) {
-    var resultCard = document.body.div.createElement
-  }
-
+  
 
 
 
@@ -104,7 +103,7 @@ function getParams(searchParamsArr) {
 //   console.log(name);
 //   console.log(webUrl);
     
-  }
+
 
   // Code for Currency API
   
