@@ -25,16 +25,10 @@ const options = {
 	}
 };
 
-
-
 fetch('https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=36&longitude=138&limit=10&distance=2&open_now=false&lunit=km&lang=en_US', options)
 	.then(response => response.json())
 	.then(response => getParams(response.data))
 	.catch(err => console.error(err));
-
-
-
-
 
 function getParams(searchParamsArr) {
   // var searchParamsArr = document.location.search.split('&');
