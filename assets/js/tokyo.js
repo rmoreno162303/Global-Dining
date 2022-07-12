@@ -2,6 +2,10 @@ var goBack = document.querySelector("#goBack");
 var travelResultTextEl = document.querySelector("#travelResultText");
 var travelResultContentEl = document.querySelector("#travelResultContent");
 
+var nameTravel;
+var webUrl;
+
+
 let map;
 
 function initMap() {
@@ -25,17 +29,117 @@ const options = {
 	}
 };
 
+
+
 fetch('https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=36&longitude=138&limit=10&distance=2&open_now=false&lunit=km&lang=en_US', options)
 	.then(response => response.json())
 	.then(response => getParams(response.data))
-	.catch(err => console.error(err));
+	// .catch(err => console.error(err));
+
+
+
+
 
 function getParams(searchParamsArr) {
   // var searchParamsArr = document.location.search.split('&');
   console.log(searchParamsArr);
-  var name = searchParamsArr[0].name
-  var webUrl = searchParamsArr[0].web_url
-  console.log(name);
-  console.log(webUrl);
-    
+
+  for (var i = 0; i < searchParamsArr.length; i++) {
+
+    var nameTravel = searchParamsArr[i].name
+    var webUrl = searchParamsArr[i].web_url
+    console.log(nameTravel);
+    console.log(webUrl)
+
+    // .then(function (data) {
+    // console.log(data);
+    // for (var i = 0; i < data.length; i++) {
+      // var createName = document.createElement
+
+  
+    }
   }
+
+  function printResultsTravel (resultObj) {
+    var resultCard = document.body.div.createElement
+  }
+
+
+
+
+
+
+
+
+//fetch(travelAdvisorApi)
+	//.then(response => response.json())
+	// .then(response => getParams(response.data))
+	//.catch(err => console.error(err));
+
+  // .then(fuction(data) {
+
+
+
+
+
+
+
+
+
+
+
+  // fetch('https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=36&longitude=138&limit=10&distance=2&open_now=false&lunit=km&lang=en_US', options)
+	// .then(response => response.json())
+	// .then(response => getParams(response.data))
+	// .catch(err => console.error(err));
+
+
+
+
+// function getParams(searchParamsArr) {
+//   // var searchParamsArr = document.location.search.split('&');
+//   console.log(searchParamsArr);
+//   var name = searchParamsArr[0].name
+//   var webUrl = searchParamsArr[0].web_url
+//   console.log(name);
+//   console.log(webUrl);
+
+  // Code for Currency API
+  
+  (function onLoad()
+{
+    // set a function for button
+    setButtonFunctions();
+
+    // fetch from API when the page loads
+    getCurrencyExchangeRates();
+})();
+// Setting the button function to display the money exchange rate.
+function setButtonFunctions() {
+document.getElementById('buttonCurrency').onclick = getCurrencyExchangeRates;
+}
+// created the variables for the from and to sections while fetching the api. 
+function getCurrencyExchangeRates()
+  {
+  const from = document.getElementById('inputCurrencyFrom').value;
+  const to = document.getElementById('inputCurrencyTo').value;
+   fetch('https://currency-exchange.p.rapidapi.com/exchange?q=1.0&from=' + from + '&to=' + to, {
+    "method": 'GET',
+    "headers": {
+      'X-RapidAPI-Key': '398fb245d7msh383d7c9eee5f575p12e203jsn4fecb1f38eaa',
+      'X-RapidAPI-Host': 'currency-exchange.p.rapidapi.com'
+    }
+  })
+  // logging the response i get for the exchange rate. 
+  .then(response => response.json())
+    .then(response => {
+      console.log('Currency Exchange API object:');
+      console.log(response);
+      console.log("\n");
+    //  Getting a response from the api and displaying it as the result.
+      document.getElementById('currencyResult').innerHTML = 'Result: ' + response;
+    })
+    .catch(err => {
+       console.error(err);
+  });
+}
