@@ -129,3 +129,5 @@ function getCurrencyExchangeRates() {
 			console.error(err);
 		});
 }
+
+
