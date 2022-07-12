@@ -5,22 +5,27 @@ var travelResultContentEl = document.querySelector("#travelResultContent");
 let map;
 
 function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 20.65, lng: -103.34 },
-    zoom: 11,
-  });
+	map = new google.maps.Map(document.getElementById("map"), {
+		center: {
+			lat: 20.65,
+			lng: -103.34
+		},
+		zoom: 11,
+	});
 }
 
 window.initMap = initMap;
 
 goBack.addEventListener("click", function () {
-  window.location.replace("../../index.html");
+	window.location.replace("../../index.html");
 });
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // ---------------------------------------------------------------------------------API CODE--------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+// CODE FOR RESTAURANTS API
+// Todd's API Key
 const options = {
 	method: 'GET',
 	headers: {
@@ -29,10 +34,10 @@ const options = {
 	}
 };
 
-fetch('https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=20.65&longitude=-103.34&limit=10&currency=USD&open_now=false&lunit=km&lang=en_US', options)
+fetch('https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=20.65&longitude=-103.34&limit=10&distance=2&open_now=false&lunit=km&lang=en_US', options)
 	.then(response => response.json())
 	.then(response => getParams(response.data))
-	// .catch(err => console.error(err));
+	.catch(err => console.error(err));
 
 function getParams(searchParamsArr) {
 	// var searchParamsArr = document.location.search.split('&');
@@ -45,11 +50,7 @@ function getParams(searchParamsArr) {
 		console.log(nameTravel);
 		console.log(webUrl)
 
-		// .then(function (data) {
-		// console.log(data);
-		// for (var i = 0; i < data.length; i++) {
-
-    // Removes undefined from API
+		// Removes undefined from API
 		if (nameTravel !== undefined) {
 			var restaurants = document.querySelector(".restaurants");
 			restaurants.insertAdjacentHTML("beforebegin", `<a href=${webUrl}><li>${nameTravel}</li></a>`)
