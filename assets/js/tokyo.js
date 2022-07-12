@@ -32,6 +32,7 @@ const options = {
 	}
 };
 
+//API for restaurants
 
 fetch('https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=36&longitude=138&limit=10&distance=2&open_now=false&lunit=km&lang=en_US', options)
 	.then(response => response.json())
@@ -50,46 +51,12 @@ function getParams(searchParamsArr) {
 		console.log(nameTravel);
 		console.log(webUrl)
 
-		// .then(function (data) {
-		// console.log(data);
-		// for (var i = 0; i < data.length; i++) {
-
-		/* for ( var i in searchParamsArr ) {
-		   if ( searchParamsArr[i] === undefined ) {
-		       delete searchParamsArr[i];
-		       i++;
-		       
-		   }
-		   */
 		if (nameTravel !== undefined) {
 			var restaurants = document.querySelector(".restaurants");
 			restaurants.insertAdjacentHTML("beforebegin", `<a href=${webUrl}><li>${nameTravel}</li></a>`)
 		}
 	}
 }
-
-
-//fetch(travelAdvisorApi)
-//.then(response => response.json())
-// .then(response => getParams(response.data))
-//.catch(err => console.error(err));
-
-// .then(fuction(data) {
-
-
-// fetch('https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=36&longitude=138&limit=10&distance=2&open_now=false&lunit=km&lang=en_US', options)
-// .then(response => response.json())
-// .then(response => getParams(response.data))
-// .catch(err => console.error(err));
-
-
-// function getParams(searchParamsArr) {
-//   // var searchParamsArr = document.location.search.split('&');
-//   console.log(searchParamsArr);
-//   var name = searchParamsArr[0].name
-//   var webUrl = searchParamsArr[0].web_url
-//   console.log(name);
-//   console.log(webUrl);
 
 
 // Code for Currency API

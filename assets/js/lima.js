@@ -1,3 +1,4 @@
+
 var goBack = document.querySelector("#goBack");
 
 let map;
@@ -14,6 +15,78 @@ window.initMap = initMap;
 goBack.addEventListener("click", function () {
 	window.location.replace("../../index.html");
 });
+
+//CODE FOR RESTAURANTS
+
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'cecdcbdec0mshd761368c3cea4dbp155534jsn4dcc984b78b4',
+		'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
+	}
+};
+
+fetch('https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=-12.04&longitude=-77.04&limit=10&currency=USD&distance=2&lunit=km&lang=en_US', options)
+	.then(response => response.json())
+	.then(response => getParams(response.data))
+	//.catch(err => console.error(err));
+
+
+function getParams(searchParamsArr) {
+    // var searchParamsArr = document.location.search.split('&');
+    console.log(searchParamsArr);
+  
+    for (var i = 0; i < searchParamsArr.length; i++) {
+      var nameTravel = searchParamsArr[i].name
+      var webUrl = searchParamsArr[i].web_url
+      console.log(nameTravel);
+      console.log(webUrl);
+      
+
+      
+
+      if (nameTravel !== undefined) {
+        var restaurants = document.querySelector(".restaurants");
+        restaurants.insertAdjacentHTML("beforebegin", `<a href=${webUrl}><li>${nameTravel}</li></a>`)
+      }
+  
+      
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
  // Code for Currency API
