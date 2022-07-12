@@ -24,7 +24,7 @@ goBack.addEventListener("click", function () {
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '17dd0426edmsh13121a26fbfbab2p198620jsnb665b009c96d',
+		'X-RapidAPI-Key': 'c18820361cmsh45b10457aa0c7e1p1363c4jsnb0b3e6b6f3a8',
 		'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
 	}
 };
