@@ -24,6 +24,11 @@ goBack.addEventListener("click", function () {
 	window.location.replace("../../index.html");
 });
 
+
+// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------API CODE--------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 const options = {
 	method: 'GET',
 	headers: {
@@ -32,11 +37,16 @@ const options = {
 	}
 };
 
+
 //API for restaurants
+
+
+// Change latitude & longitude to change location
 
 fetch('https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=36&longitude=138&limit=10&distance=2&open_now=false&lunit=km&lang=en_US', options)
 	.then(response => response.json())
 	.then(response => getParams(response.data))
+
 // .catch(err => console.error(err));
 
 
@@ -50,6 +60,13 @@ function getParams(searchParamsArr) {
 		var webUrl = searchParamsArr[i].web_url
 		console.log(nameTravel);
 		console.log(webUrl)
+
+
+		// .then(function (data) {
+		// console.log(data);
+		// for (var i = 0; i < data.length; i++) {
+
+    // Removes undefined from API
 
 		if (nameTravel !== undefined) {
 			var restaurants = document.querySelector(".restaurants");
