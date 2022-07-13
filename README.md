@@ -20,52 +20,25 @@ To install this application, you will need a text editor. I recommend Visual Stu
 ### Installing
 To install this code, download the zip file, or use GitHub's guidelines to clone the repository.
 
-### Summary
--
--
--
-
-### This project has the following features:
--
--
--
-
 ### Psuedo code:
-- 
-- 
-- 
-- 
-- 
+- Create landing html (Globe page)
+- Create buttons that take user to other pages (pins)
+- Show user a user-friendly interface that lets them see differnet information.
+- Have some sort of interaction within each webpage (globe on landing page, google map on each page)
 
-### This project has script features of:
--
--
--
-
-<<<<<<< Updated upstream
 ### To Execute File:
 Open in browser
 
-### Features:
+### Files:
 - Index.html and multiple country.html's
 - Style.css and multiple country.css's
 - index.js and multiple country.js's
-=======
-### This project has media Queries for:
--
--
--
-
-### To Execute File:
--
--
--
 
 ### Features:
--
--
--
->>>>>>> Stashed changes
+- See restaurants in a select city.
+- See local currency exchange.
+- See an interactive google map of the city.
+- See city's country's flag.
 
 ### Authors
 - Austin Murray
@@ -73,25 +46,3 @@ Open in browser
 - Roberto Moreno
 - Todd Ayres
 - Troy Ekdahl
-
-### Acknowledgments
-
-
--
--
-
-### Features:
--
--
--
->>>>>>> Stashed changes
-
-### Authors
-- Austin Murray
-- Aileen Bryand
-- Roberto Moreno
-- Todd Ayres
-- Troy Ekdahl
-
-### Acknowledgments
-
