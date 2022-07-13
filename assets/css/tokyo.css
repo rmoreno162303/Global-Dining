@@ -42,19 +42,6 @@ header h1 {
     font-family: 'Archivo', sans-serif;
 }
 
-header h1 {
-    background-color: rgba(54, 54, 54, 0.8);
-    color: #fff;
-    padding: 0 1rem;
-    position: absolute;
-    top: 2rem; 
-    left: 2rem;
-    font-size: 3rem;
-    font-weight: bold;
-    font-family: 'Archivo', sans-serif;
-}
-
-
 header button {
   background-color:rgba(54, 54, 54, 0.8);
   color: #fff;
