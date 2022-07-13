@@ -29,6 +29,17 @@ header {
   width:fit-content;
 }
 
+header h1 {
+    background-color: rgba(54, 54, 54, 0.8);
+    color: #fff;
+    padding: 0 1rem;
+    position: absolute;
+    top: 2rem; 
+    left: 2rem;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: 'Archivo', sans-serif;
+}
 
 header h1 {
     background-color: rgba(54, 54, 54, 0.8);
@@ -48,25 +59,12 @@ header button {
   color: #fff;
   padding: 0 1rem;
   position: absolute;
-  top: 2rem; 
-  left: 2rem;
-  font-size: 3rem;
+  top: 15rem;
+  right: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  font-family: 'Archivo', sans-serif;
-}
-
-
-header button {
-background-color:rgba(54, 54, 54, 0.8);
-color: #fff;
-padding: 0 1rem;
-position: absolute;
-top: 15rem;
-right: 2rem;
-font-size: 1.5rem;
-font-weight: bold;
-border: none;
-cursor: pointer;
+  border: none;
+  cursor: pointer;
 }
 
 .flag {
@@ -78,55 +76,54 @@ cursor: pointer;
 }
 
 #map {
-height: 40%;
-margin-top: 6%;
-margin-left: 1%;
-margin-right: 1%;
-
+  height: 40%;
+  margin-top: 6%;
+  margin-left: 1%;
+  margin-right: 1%;
 }
 
 html,
 body {
-height: 100%;
-margin: 0;
-padding: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 form{
-min-height: 20vh;
-display: flex;
-justify-content: left;
-align-items: flex-start;
-float: left;
-
-
+  min-height: 20vh;
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  float: left;
+  
+  
 }
 
 form input, form button{
-padding: 0.5rem;
-font-size: 2rem;
-border: none;
-background: linear-gradient(#ADA996, #F2F2F2, #DBDBDB, #EAEAEA )
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: linear-gradient(#ADA996, #F2F2F2, #DBDBDB, #EAEAEA )
 }
 
 form button{
-color: white;
-background: #f5af19;
-cursor: pointer;
-transition: all 0.3s ease;
+  color: white;
+  background: #f5af19;
+  cursor: pointer;
+  transition: all 0.3s ease;
 
 }
 
 form button:hover{
-background: #F28705;
-color: white;
+  background: #F28705;
+  color: white;
 }
 
 .row{
-height: 21%;
+  height: 21%;
 }
 
 
 #fa-solid-fa-magnifying-glass{
-background-color: black;
+  background-color: black;
 }
