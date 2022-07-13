@@ -14,6 +14,16 @@ This project has been deployed to GitHub Pages. To get this project up and runni
 - GitHub Repository
 - Deployed GitHub IO
 
+### Pictures of the Project
+#### The landing page
+![](https://i.gyazo.com/0cfa35a90803d16450ac2cc362b2491c.png)
+
+#### An example of one of the cities, showing the restaurants, currency exchange, and the country flag.
+![](https://i.gyazo.com/28dc527f33e40102492324b8c2ec2fc6.jpg)
+
+#### Showing the footer of the website.
+![](https://i.gyazo.com/9194b72a8d3dc26409fbaa7575524337.png)
+
 ### Prerequisites
 To install this application, you will need a text editor. I recommend Visual Studio Code.
 
