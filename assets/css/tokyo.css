@@ -83,8 +83,6 @@ form{
   justify-content: left;
   align-items: flex-start;
   float: left;
-  
-  
 }
 
 form input, form button{
@@ -99,7 +97,6 @@ form button{
   background: #f5af19;
   cursor: pointer;
   transition: all 0.3s ease;
-
 }
 
 form button:hover{
