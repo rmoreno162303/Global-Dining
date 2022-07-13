@@ -16,22 +16,23 @@
 			</div>
 		</header>
 		<div class="row">
-			<div class="columns">
-				<div class="column is-one-third card">
+			<div class="container columns">
+				<div class= "column is-one-third card">
 					Restaurants
-					<div class="restaurants"></div>
-				</div>
-				<div class="column is-one-third card">
-					<strong>Currency Exchange</strong>
-					<div style="margin-top: 53px">
-						<!--put value boxes next to the from and to -->
-						<p>From: <input class="form-control marginTopBottom" type="text" id="inputCurrencyFrom" value="USD"> </p>
-						<p>To: <input class="form-control marginTopBottom" type="text" id="inputCurrencyTo" value="EUR"> </p>
+				<div class="restaurants"></div>
+			</div>
+				<section>
+					<div class="column is-one-third card">
+						<strong>Currency Exchange</strong>
+						<div style="margin-top: 53px">
+							<!--put value boxes next to the from and to -->
+							<p>From: <input class="form-control marginTopBottom" type="text" id="inputCurrencyFrom" value="USD"> </p>
+							<p>To: <input class="form-control marginTopBottom" type="text" id="inputCurrencyTo" value="EUR"> </p>
 					</div>
-					<div>
+						<div>
 						<!-- Put calculate button to display currency exchange result -->
 						<button class="btn btn-primary" id="buttonCurrency">Calculate</button>
-					</div>
+						</div>
 					<div class="currencyResult">
 						<!-- Put currency result -->
 						<h4 id="currencyResult">Result: 0</h4>
