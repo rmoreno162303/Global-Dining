@@ -21,7 +21,7 @@ This project has been deployed to GitHub Pages. To get this project up and runni
 #### An example of one of the cities, showing the restaurants, currency exchange, and the country flag.
 ![](https://i.gyazo.com/28dc527f33e40102492324b8c2ec2fc6.jpg)
 
-#### Showing the footer of the website.
+#### Showing the footer of the website, aswell as the interactive google map.
 ![](https://i.gyazo.com/9194b72a8d3dc26409fbaa7575524337.png)
 
 ### Prerequisites
